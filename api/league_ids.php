@@ -1,6 +1,8 @@
 <?php
-// /api/league_ids.php
-
+/**
+ * @file league_ids.php
+ * @brief The file is going to be unused as of now, most likely not to be used in the future, but I'll keep it just in case.
+ */
 return [
     'Premier League' => 39,
     'La Liga' => 140,

@@ -1,4 +1,4 @@
-# MyScoreNET Project
+# MyScoreArena Project
 
 This project interacts with the **API-Football API** (provided by [API-Sports](https://api-sports.io/)) to retrieve and display football-related data such as fixtures, standings, team information, and match details. The project is built using PHP and is designed to work within the limitations of the API's free plan.
 
@@ -25,6 +25,18 @@ This project interacts with the **API-Football API** (provided by [API-Sports](h
 5. **Caching and Rate Limit Handling**:
    - Cache API responses to reduce the number of API calls. (WIP)
    - Handle API rate limits gracefully (10 requests per minute, 100 requests per day).
+
+---
+
+## New Features
+
+1. **Caching**:
+   - API responses are cached in the `/data/cache` directory to reduce API calls and improve performance.
+   - Cached data expires after 1 hour (configurable).
+
+2. **Simplified Data Retrieval**:
+   - Use `getDataByLeague($leagueName, $season)` to retrieve league standings.
+   - Use `getDataByTeam($teamId)` to retrieve team information.
 
 ---
 
