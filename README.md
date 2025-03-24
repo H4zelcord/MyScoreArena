@@ -1,4 +1,4 @@
-# MyScoreNET Project
+# MyScoreArena Project
 
 This project interacts with the **API-Football API** (provided by [API-Sports](https://api-sports.io/)) to retrieve and display football-related data such as fixtures, standings, team information, and match details. The project is built using PHP and is designed to work within the limitations of the API's free plan.
 
