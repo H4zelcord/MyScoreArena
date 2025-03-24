@@ -28,6 +28,18 @@ This project interacts with the **API-Football API** (provided by [API-Sports](h
 
 ---
 
+## New Features
+
+1. **Caching**:
+   - API responses are cached in the `/data/cache` directory to reduce API calls and improve performance.
+   - Cached data expires after 1 hour (configurable).
+
+2. **Simplified Data Retrieval**:
+   - Use `getDataByLeague($leagueName, $season)` to retrieve league standings.
+   - Use `getDataByTeam($teamId)` to retrieve team information.
+
+---
+
 ## Project Structure
 ```
 /MyScoreNET/
