@@ -89,7 +89,16 @@ function getDataByLeague($leagueName, $season) {
 
     $endpoint = 'standings';
     $params = ['league' => $leagueId, 'season' => $season];
+
+    error_log('API Request: Endpoint=' . $endpoint . ', Params=' . json_encode($params));
+
     $response = makeApiRequestWithCache($endpoint, $params);
+
+    error_log('API Response: ' . print_r($response, true));
+
+    if (empty($response['response'])) {
+        return ['error' => 'No data available for the selected season'];
+    }
 
     return $response['response'][0]['league']['standings'][0] ?? [];
 }
@@ -106,5 +115,59 @@ function getDataByTeam($teamId) {
     $response = makeApiRequestWithCache($endpoint, $params);
 
     return $response['response'][0] ?? [];
+}
+
+/**
+ * @brief Retrieve fixtures for a specific Spanish competition and season.
+ * 
+ * @param string $competition The name of the competition (e.g., "La Liga", "Copa del Rey").
+ * @param int $season The season year.
+ * @return array The fixtures data.
+ */
+function getFixturesByCompetition($competition, $season) {
+    global $leagueIds;
+
+    $leagueId = $leagueIds[$competition] ?? null;
+    if (!$leagueId) {
+        return ['error' => 'Competition not found'];
+    }
+
+    $endpoint = 'fixtures';
+    $params = ['league' => $leagueId, 'season' => $season];
+
+    error_log('API Request: Endpoint=' . $endpoint . ', Params=' . json_encode($params));
+
+    $response = makeApiRequestWithCache($endpoint, $params);
+
+    error_log('API Response: ' . print_r($response, true));
+
+    if (empty($response['response'])) {
+        return ['error' => 'No fixtures available for the selected competition and season'];
+    }
+
+    return $response['response'];
+}
+
+/**
+ * @brief Retrieve events for a specific fixture.
+ * 
+ * @param int $fixtureId The ID of the fixture.
+ * @return array The events data.
+ */
+function getEventsByFixture($fixtureId) {
+    $endpoint = 'fixtures/events';
+    $params = ['fixture' => $fixtureId];
+
+    error_log('API Request: Endpoint=' . $endpoint . ', Params=' . json_encode($params));
+
+    $response = makeApiRequestWithCache($endpoint, $params);
+
+    error_log('API Response: ' . print_r($response, true));
+
+    if (empty($response['response'])) {
+        return ['error' => 'No events available for the selected fixture'];
+    }
+
+    return $response['response'];
 }
 ?>
