@@ -42,28 +42,23 @@ This project interacts with the **API-Football API** (provided by [API-Sports](h
 
 ## Project Structure
 ```
-/MyScoreNET/
-│
-├── /api/
-│ ├── football_api.php # Centralized file for all API-related functions
-│ ├── league_ids.php # Array of league names and their IDs
-│ └── config.php # Configuration file (API key, base URL)
-│
-├── /includes/
-│ └── functions.php # Helper functions (if needed)
-│
-├── /public/
-│ ├── index.php # Main entry point for the website
-│ ├── styles.css # CSS file for styling
-│ └── scripts.js # JavaScript file for interactivity
-│
-├── /data/
-│ └── cache/ # Cache folder for storing API responses
-│
-├── /logs/
-│ └── error.log # Log file for errors
-│
-└── README.md # Project documentation
+MYSCOREARENA/
+├── api/
+│   ├── config.php
+│   ├── football_api.php
+│   └── league_ids.php
+├── data/
+│   └── cache/
+├── logs/
+│   └── error.log
+├── public/
+│   ├── fetch_data.php
+│   ├── fetch_events.php
+│   ├── fetch_fixtures.php
+│   ├── index.php
+│   ├── scripts.js
+│   └── style.css
+└── README.md
 ```
 
 ---
