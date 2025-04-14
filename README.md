@@ -1,6 +1,6 @@
 # MyScoreArena Project
 
-This project interacts with the **API-Football API** (provided by [API-Sports](https://api-sports.io/)) to retrieve and display football-related data such as fixtures, standings, team information, and match details. The project is built using PHP and is designed to work within the limitations of the API's free plan.
+This project is a standalone work of Alejandro Bernal Suárez, it interacts with the **API-Football API** (provided by [API-Sports](https://api-sports.io/)) to retrieve and display football-related data such as fixtures, standings and match details. The project is built using PHP and is designed to work within the limitations of the API's free plan.
 
 ---
 
@@ -8,22 +8,20 @@ This project interacts with the **API-Football API** (provided by [API-Sports](h
 
 1. **Retrieve League Fixtures**:
    - Fetch fixtures for a specific league and season.
-   - Display match details such as teams, date, and time.
+   - Display match details.
 
-2. **Retrieve Team Information**:
-   - Get details about a specific football club, including name, country, founding year, and logo.
-
-3. **Retrieve League Standings**:
+2. **Retrieve League Standings**:
    - Fetch and display the current standings for a specific league and season.
 
-4. **Retrieve Match Details**:
+3. **Retrieve Match Details**:
    - Get detailed information about a specific match, including:
-     - Predictions
-     - Odds
+     - ~Predictions~ (this cannot be done without premium plan from the API key website)
+     - ~Odds~ (this cannot be done without premium plan from the API key website)
      - ~Live stats (if the match is live)~ (this cannot be done without premium plan from the API key website)
+     - Access to matches data (goals, cards, penalties, substitutions...).
 
-5. **Caching and Rate Limit Handling**:
-   - Cache API responses to reduce the number of API calls. (WIP)
+4. **Caching and Rate Limit Handling**:
+   - Cache API responses to reduce the number of API calls. (WIP).
    - Handle API rate limits gracefully (10 requests per minute, 100 requests per day).
 
 ---
@@ -49,6 +47,10 @@ MYSCOREARENA/
 │   └── league_ids.php
 ├── data/
 │   └── cache/
+│   ├──mbappe_backside.jpeg
+│   ├──raphinha_celebrating.jpg
+│   ├──spain_laliga_teams.png
+│   ├──vinicius_foul.webp
 ├── logs/
 │   └── error.log
 ├── public/
@@ -58,6 +60,8 @@ MYSCOREARENA/
 │   ├── index.php
 │   ├── scripts.js
 │   └── style.css
+├──.env
+├──.gitignore
 └── README.md
 ```
 
@@ -69,11 +73,11 @@ MYSCOREARENA/
    - Sign up at [API-Football](https://www.api-football.com/) to get your API key.
 
 2. **Update Configuration**:
-   - Open `/api/config.php` and replace `'your_api_key_here'` with your actual API key.
+   - Open `/api/config.php` and replace `'your_api_key_here'` with your actual API key(Or make enviroment variable in .env).
 
 3. **Run the Project**:
    - Place the project files on a PHP-enabled server.
-   - Access the `index.php` file in your browser (e.g., `http://localhost/MyScoreNET/public/index.php`).
+   - Access the `index.php` file in your browser (e.g., `http://localhost/MyScoreArena/public/index.php`).
 
 ---
 
