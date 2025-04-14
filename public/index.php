@@ -17,7 +17,7 @@ $teamData = getDataByTeam($teamId);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football Data</title>
+    <title>MyScoreArena</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -106,7 +106,7 @@ $teamData = getDataByTeam($teamId);
             transform: translate(-50%, -50%); /* Center the image */
             height: 100%; /* Ensure the image spans the full height of the page */
             width: auto; /* Maintain aspect ratio */
-            opacity: 0.8; /* Slight transparency */
+            opacity: 0.7; /* Slight transparency */
             pointer-events: none; /* Allow clicks to pass through the image */
             z-index: 0; /* Place below the content */
         }
@@ -115,6 +115,13 @@ $teamData = getDataByTeam($teamId);
         }
 
         #fullPage .card {
+        }
+
+        #fullPage h1, 
+        #fullPage h2 {
+            z-index: 4;
+            text-shadow: 4px 4px 4px rgb(0, 0, 0); /* Subtle shadow for better readability */
+            color: rgb(255, 255, 255); /* Ensure the text color contrasts with the background */
         }
     </style>
     <script>
